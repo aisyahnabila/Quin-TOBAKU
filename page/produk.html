@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="src/tailwindcss/tailwind.css">
+    <link rel="stylesheet" href="../src/tailwindcss/tailwind.css">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
         <nav class="bg-white dark:bg-gray-900  w-full z-20 top-0 start-0 border-gray-200 dark:border-gray-600">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="images/logo.jpg" class="w-20" alt="Flowbite Logo">
+                    <img src="../images/logo.jpg" class="w-20" alt="Flowbite Logo">
                 </a>
                 <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                     <div class="flex items-center gap-4">
@@ -61,7 +61,7 @@
                         class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <li>
                             <a href="#"
-                                class="block py-2 px-3 text-white bg-yellow-600 rounded md:bg-transparent md:text-yellow-600 md:p-0 md:dark:text-yellow-600"
+                                class="block py-2 px-3 text-white bg-yellow-600 rounded md:bg-transparent md:text-gray-900 md:p-0 md:dark:text-yellow-600"
                                 aria-current="page">BERANDA</a>
                         </li>
                         <li>
@@ -71,7 +71,7 @@
                         </li>
                         <li>
                             <a href="#"
-                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-600 md:p-0 md:dark:hover:text-yellow-600 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">PRODUK</a>
+                                class="block py-2 px-3 border-b-2 border-yellow-600 text-yellow-600 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-600 md:p-0 md:dark:hover:text-yellow-600 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">PRODUK</a>
                         </li>
                     </ul>
                 </div>
@@ -80,15 +80,72 @@
     </header>
 
     <section class="mb-32">
-
         <div class="container mx-auto px-4 my-8">
             <div class="relative flex items-center justify-center w-full">
                 <hr class="w-full h-px bg-yellow-600 border-0 dark:bg-gray-700">
                 <h1
                     class="absolute px-10 text-2xl font-medium text-yellow-600 bg-white dark:text-white dark:bg-gray-900">
-                    Kategori Produk</h1>
+                    Produk Kami</h1>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 mt-10 p-5">
+            <div class="mt-10 grid grid-cols-3 sm:grid-cols-3 md:grid-cols-7 gap-4">
+                <button type="button"
+                    class="w-full h-16 text-white bg-yellow-600 hover:text-white border-2 border-yellow-600 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
+                    TEPUNG
+                </button>
+                <button type="button"
+                    class="w-full h-16 text-yellow-600 hover:text-white border-2 border-yellow-600 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
+                    KEJU
+                </button>
+                <button type="button"
+                    class="w-full h-16 text-yellow-600 hover:text-white border-2 border-yellow-600 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
+                    GLAZE
+                </button>
+                <button type="button"
+                    class="w-full h-16 text-yellow-600 hover:text-white border-2 border-yellow-600 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
+                    COKELAT
+                </button>
+                <button type="button"
+                    class="w-full h-16 text-yellow-600 hover:text-white border-2 border-yellow-600 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
+                    MAYONAIS
+                </button>
+                <button type="button"
+                    class="w-full h-16 text-yellow-600 hover:text-white border-2 border-yellow-600 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
+                    PEWARNA MAKANAN
+                </button>
+                <button type="button"
+                    class="w-full h-16 text-yellow-600 hover:text-white border-2 border-yellow-600 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
+                    PENGEMBANG
+                </button>
+                <button type="button"
+                    class="w-full h-16 text-yellow-600 hover:text-white border-2 border-yellow-600 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
+                    JELY
+                </button>
+                <button type="button"
+                    class="w-full h-16 text-yellow-600 hover:text-white border-2 border-yellow-600 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
+                    SAUS
+                </button>
+                <button type="button"
+                    class="w-full h-16 text-yellow-600 hover:text-white border-2 border-yellow-600 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
+                    MENTEGA
+                </button>
+                <button type="button"
+                    class="w-full h-16 text-yellow-600 hover:text-white border-2 border-yellow-600 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
+                    KRIM KOCOK
+                </button>
+                <button type="button"
+                    class="w-full h-16 text-yellow-600 hover:text-white border-2 border-yellow-600 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
+                    ES KRIM
+                </button>
+                <button type="button"
+                    class="w-full h-16 text-yellow-600 hover:text-white border-2 border-yellow-600 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
+                    BROWNIES
+                </button>
+                <button type="button"
+                    class="w-full h-16 text-yellow-600 hover:text-white border-2 border-yellow-600 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
+                    DEKORASI KUE
+                </button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 mt-10 ">
                 <div class="bg-white shadow-md rounded-none overflow-hidden border-2 ">
                     <img src="images/items/tepung.png" alt="Product 1" class="w-full h-90 object-cover">
                     <div class="p-4">
@@ -116,15 +173,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="relative flex items-center justify-center w-full mt-10">
-                <hr class="w-full h-px bg-yellow-600 border-0 dark:bg-gray-700">
-                <h1
-                    class="absolute px-10 text-2xl font-medium text-yellow-600 bg-white dark:text-white dark:bg-gray-900">
-                    Panduan Pemesanan Produk</h1>
-            </div>
-            <div class="w-full mt-10">
-                <img src="images/proses_quin.png" class="w-full h-auto object-cover" alt="Hero Image">
             </div>
         </div>
 
