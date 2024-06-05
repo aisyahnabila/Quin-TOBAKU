@@ -1,9 +1,7 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./dist/*.{html,js}'], //ganti path sesuai folder project yang digunakan
+  content: ['./page/*.html', './src/js/*.js'],
   theme: {
     extend: {},
   },
   plugins: [],
 }
-
