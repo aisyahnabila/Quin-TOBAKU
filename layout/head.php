@@ -1,3 +1,6 @@
+<?php
+    include 'config.php'
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +34,7 @@
                     <ul
                         class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <li>
-                            <a href="#"
+                            <a href="index.php"
                                 class="block py-2 px-3 border-b-2 border-yellow-600 text-white bg-yellow-600 md:bg-transparent md:text-yellow-600 md:p-0 md:dark:text-yellow-600"
                                 aria-current="page">BERANDA</a>
                         </li>
@@ -41,7 +44,7 @@
                                 KAMI</a>
                         </li>
                         <li>
-                            <a href="page/produk.html"
+                            <a href="produk.php"
                                 class="block py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-600 md:p-0 md:dark:hover:text-yellow-600 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">PRODUK</a>
                         </li>
                     </ul>

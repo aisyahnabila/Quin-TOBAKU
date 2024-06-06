@@ -1,23 +1,7 @@
 <?php
-include 'tobaku.db';
-$title = 'Quin ToBaKu';
-// Mengambil item beserta kategorinya dari database
-$sql = "SELECT item.item_id, item.item_name, item.item_description, item.image, category.category_name 
-        FROM item 
-        JOIN category ON item.category_id = category.category_id";
-$result = $conn->query($sql);
-
-$items = [];
-if ($result->num_rows > 0) {
-  while ($row = $result->fetch_assoc()) {
-    $items[] = $row;
-  }
-} else {
-  echo "No items found";
-}
-
-$conn->close();
-
+include 'layout/head.php';
+$sql = "SELECT *FROM item";
+$query = mysqli_query($conn, $sql);
 ?>
 <!-- Banner component -->
 <section class="mb-32">
@@ -34,48 +18,21 @@ $conn->close();
         Kategori Produk</h1>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 mt-10 p-5">
-      <?php while($data = mysql_fetch_array($)) ($items as $item) {
-        echo'<div class="bg-white shadow-md rounded-none overflow-hidden border-2 ">
-             <img src="' . $item["image"] . '" alt="Product Image" class="w-full h-90 object-cover">
-             <div class="p-4">
-                 <h2 class="text-lg text-center">' . $item["item_name"] . '</h2>
-                 <p class="text-center text-gray-600">' . $item["item_description"] . '</p>
-                 <p class="text-center text-gray-500">' . $item["category_name"] . '</p>
-                 <div class="mt-4 text-center">
-                     <a class="text-yellow-600 border-b-2 border-yellow-600" href="product.php?id=' . $item["item_id"] . '">Lihat Lebih Banyak</a>
-                 </div>
-             </div>
-           </div>';
+      <?php
+      while ($data = mysqli_fetch_array($query)) {
+      ?>
+        <div class="bg-white shadow-md rounded-none overflow-hidden border-2 ">
+          <img src="<?php echo $data['item_id'] ?>" alt="Product 1" class="w-full h-90 object-cover">
+          <div class="p-4">
+            <h2 class="text-lg text-center"><?php $data['item_name'] ?></h2>
+            <div class="mt-4 text-center">
+              <a class="text-yellow-600 border-b-2 border-yellow-600" href="">Lihat Lebih Banyak</a>
+            </div>
+          </div>
+        </div>
+      <?php
       }
       ?>
-
-      <div class="bg-white shadow-md rounded-none overflow-hidden border-2 ">
-        <img src="images/items/tepung.png" alt="Product 1" class="w-full h-90 object-cover">
-        <div class="p-4">
-          <h2 class="text-lg text-center">Tepung</h2>
-          <div class="mt-4 text-center">
-            <a class="text-yellow-600 border-b-2 border-yellow-600" href="">Lihat Lebih Banyak</a>
-          </div>
-        </div>
-      </div>
-      <div class="bg-white shadow-md rounded-none overflow-hidden border-2 ">
-        <img src="images/items/tepung.png" alt="Product 1" class="w-full h-90 object-cover">
-        <div class="p-4">
-          <h2 class="text-lg text-center">Tepung</h2>
-          <div class="mt-4 text-center">
-            <a class="text-yellow-600 border-b-2 border-yellow-600" href="">Lihat Lebih Banyak</a>
-          </div>
-        </div>
-      </div>
-      <div class="bg-white shadow-md rounded-none overflow-hidden border-2 ">
-        <img src="images/items/tepung.png" alt="Product 1" class="w-full h-90 object-cover">
-        <div class="p-4">
-          <h2 class="text-lg text-center">Tepung</h2>
-          <div class="mt-4 text-center">
-            <a class="text-yellow-600 border-b-2 border-yellow-600" href="">Lihat Lebih Banyak</a>
-          </div>
-        </div>
-      </div>
     </div>
     <div class="relative flex items-center justify-center w-full mt-10">
       <hr class="w-full h-px bg-yellow-600 border-0 dark:bg-gray-700">
