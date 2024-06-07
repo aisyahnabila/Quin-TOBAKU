@@ -4,7 +4,7 @@ include '../../config.php';
 
 if (isset($_POST['save'])) {
     // Menangkap data yang dikirim dari form
-    $nama = mysqli_real_escape_string($conn, $_POST['nama']);
+    $nama =  $_POST['nama'];
 
     // Query untuk menyimpan data kategori
     $sql = "INSERT INTO category (category_name) VALUES ('$nama')";

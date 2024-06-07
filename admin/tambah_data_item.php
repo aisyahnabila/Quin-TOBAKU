@@ -21,6 +21,7 @@ include_once 'layouts/header.php';
                                 <h5>Tambahkan Barang</h5>
                             </div>
                             <div class="ibox-content">
+
                                 <form role="form" action="action/createBarang.php" method="post" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col-sm-6 ">
@@ -61,7 +62,6 @@ include_once 'layouts/header.php';
                                     </div>
                                     <button class="btn btn-lg btn-primary w-full m-t-n-xs" name="save" type="submit"><strong>+ Tambahkkan Barang</strong></button>
                                 </form>
-
                             </div>
                         </div>
                     </div>

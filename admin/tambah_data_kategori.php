@@ -64,8 +64,8 @@ include_once 'layouts/header.php';
                                                     echo "<td>" . $no++ . "</td>";
                                                     echo "<td>" . $row['category_name'] . "</td>";
                                                     echo "<td class='center'>";
-                                                    echo "<button class='btn btn-primary dim btn-sm-dim' type='button'><i class='fa fa-pencil'></i></button>";
-                                                    echo "<button class='btn btn-danger dim btn-sm-dim' type='button'><i class='fa fa-trash-o'></i></button>";
+                                                    echo "<a href='edit_data_kategori.php?id=" .  $row['category_id'] . " ' class='btn btn-primary dim btn-sm-dim text-white ms-2' type='button'><i class='fa fa-pencil'></i></a>";
+                                                    echo "<a href='action/deleteKategori.php?id=" . $row['category_id'] . "' class='btn btn-danger dim btn-sm-dim text-white' type='button'><i class='fa fa-trash-o'></i></a>";
                                                     echo "</td>";
                                                     echo "</tr>";
                                                 }

@@ -1,5 +1,5 @@
 <?php
-    include 'config.php'
+include 'config.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +10,7 @@
     <title>Home | Welcome To Queen ToBaKu</title>
     <link rel="stylesheet" href="src/tailwindcss/tailwind.css">
 </head>
+<script src="src/js/jquery.js"></script>
 
 <body>
     <header>
@@ -19,36 +20,52 @@
                     <img src="images/logo.jpg" class="w-20" alt="Flowbite Logo">
                 </a>
                 <div class="flex md:hidden">
-                    <button id="hamburger-button" data-collapse-toggle="navbar-sticky" type="button"
-                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                        aria-controls="navbar-sticky" aria-expanded="false">
+                    <button id="hamburger-button" data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
-                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 17 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M1 1h15M1 7h15M1 13h15" />
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
                         </svg>
                     </button>
                 </div>
                 <div class="hidden w-full md:flex md:items-center md:justify-between md:w-auto" id="navbar-sticky">
-                    <ul
-                        class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <li>
-                            <a href="index.php"
-                                class="block py-2 px-3 border-b-2 border-yellow-600 text-white bg-yellow-600 md:bg-transparent md:text-yellow-600 md:p-0 md:dark:text-yellow-600"
-                                aria-current="page">BERANDA</a>
+                            <a href="index.php" data-page="index" class="nav-link block py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-600 md:p-0 md:dark:hover:text-yellow-600 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">BERANDA</a>
                         </li>
                         <li>
-                            <a href="page/tentang.html"
-                                class="block py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-600 md:p-0 md:dark:hover:text-yellow-600 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">TENTANG
+                            <a href="tentang.php" data-page="tentang" class="nav-link block py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-600 md:p-0 md:dark:hover:text-yellow-600 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">TENTANG
                                 KAMI</a>
                         </li>
                         <li>
-                            <a href="produk.php"
-                                class="block py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-600 md:p-0 md:dark:hover:text-yellow-600 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">PRODUK</a>
+                            <a href="produk.php" data-page="produk" class="nav-link block py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-600 md:p-0 md:dark:hover:text-yellow-600 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">PRODUK</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+
+        <script>
+            $(document).ready(function() {
+                // Highlight the current page link
+                var path = window.location.pathname.split("/").pop();
+
+                if (path === "") {
+                    path = "index.php";
+                }
+
+                $('.nav-link').each(function() {
+                    var href = $(this).attr('href');
+                    if (path === href) {
+                        $(this).addClass('block py-2 px-3 border-b-2 border-yellow-600 text-white bg-yellow-600 md:bg-transparent md:text-yellow-600 md:p-0 md:dark:text-yellow-600');
+                    }
+                });
+
+                // Add click event to add active class to clicked link
+                $('.nav-link').on('click', function() {
+                    $('.nav-link').removeClass('block py-2 px-3 border-b-2 border-yellow-600 text-white bg-yellow-600 md:bg-transparent md:text-yellow-600 md:p-0 md:dark:text-yellow-600');
+                    $(this).addClass('block py-2 px-3 border-b-2 border-yellow-600 text-white bg-yellow-600 md:bg-transparent md:text-yellow-600 md:p-0 md:dark:text-yellow-600');
+                });
+            });
+        </script>
+
     </header>

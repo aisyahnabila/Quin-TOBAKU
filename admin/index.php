@@ -1,5 +1,15 @@
 <?php
 include_once 'layouts/header.php';
+$queryBarang = "SELECT COUNT(item_id) AS total_barang FROM item";
+$resultBarang = mysqli_query($conn, $queryBarang);
+$rowBarang = mysqli_fetch_assoc($resultBarang);
+$totalBarang = $rowBarang['total_barang'];
+
+// Query untuk menghitung total kategori
+$queryKategori = "SELECT COUNT(category_id) AS total_kategori FROM category";
+$resultKategori = mysqli_query($conn, $queryKategori);
+$rowKategori = mysqli_fetch_assoc($resultKategori);
+$totalKategori = $rowKategori['total_kategori'];
 
 ?>
 <!-- CSS LINK -->
@@ -22,7 +32,7 @@ include_once 'layouts/header.php';
                                 <h5>Barang</h5>
                             </div>
                             <div class="ibox-content">
-                                <h1 class="no-margins">2</h1>
+                                <h1 class="no-margins"><?php echo $totalBarang; ?></h1>
                                 <small>Total Barang</small>
                             </div>
                         </div>
@@ -33,7 +43,7 @@ include_once 'layouts/header.php';
                                 <h5>Kategori</h5>
                             </div>
                             <div class="ibox-content">
-                                <h1 class="no-margins">4</h1>
+                                <h1 class="no-margins"><?php echo $totalKategori; ?></h1>
                                 <small>Total Kategori</small>
                             </div>
                         </div>
@@ -58,10 +68,10 @@ include_once 'layouts/header.php';
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <?php
+                                            <?php
                                             $sql = "SELECT item.*, category.category_name FROM item INNER JOIN category ON item.category_id = category.category_id";
                                             $result = mysqli_query($conn, $sql);
-                                            
+
                                             if (mysqli_num_rows($result) > 0) {
                                                 $no = 1;
                                                 while ($row = mysqli_fetch_assoc($result)) {
@@ -71,14 +81,14 @@ include_once 'layouts/header.php';
                                                     echo "<td>" . $row['item_description'] . "</td>";
                                                     echo "<td>" . $row['category_name'] . "</td>";
                                                     echo "<td class='center'>
-                                                            <button class='btn btn-primary dim btn-sm-dim' type='button'><i class='fa fa-pencil'></i></button>
-                                                            <button class='btn btn-danger dim btn-sm-dim' type='button'><i class='fa fa-trash-o'></i></button>
+                                                            <a href='edit_data_item.php?id=" .  $row['item_id'] . " ' class='btn btn-primary dim btn-sm-dim' type='button'><i class='fa fa-pencil'></i></a>
+                                                            <a href='action/deleteBarang.php?id=". $row['item_id'] . " ' class='btn btn-danger dim btn-sm-dim text-white  ' type='button'><i class='fa fa-trash-o'></i></a>
                                                           </td>";
                                                     echo "</tr>";
                                                     $no++;
                                                 }
-                                            } 
-                                            
+                                            }
+
                                             mysqli_close($conn);
                                             ?>
                                         </tbody>
@@ -96,26 +106,6 @@ include_once 'layouts/header.php';
                 </div>
                 <div>
                     <strong>Copyright</strong> Example Company &copy; 2014-2018
-                </div>
-            </div>
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

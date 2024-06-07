@@ -51,7 +51,3 @@
         </div>
     </div>
 </footer>
-<script src="src/js/index.js" defer></script>
-</body>
-
-</html>

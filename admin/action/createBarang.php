@@ -22,7 +22,7 @@ if (isset($_POST['save'])) {
                     // Insert data ke database
                     $sql = "INSERT INTO item (item_name, item_description, category_id, image) VALUES ('$nama_barang', '$deskripsi', '$kategori', '$foto_name')";
                     if (mysqli_query($conn, $sql)) {
-                        header("Location: ../tambah_data_barang.php?success=1");
+                        header("Location: ../index.php");
                     } else {
                         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
                     }
