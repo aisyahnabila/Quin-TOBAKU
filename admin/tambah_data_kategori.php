@@ -21,16 +21,16 @@ include_once 'layouts/header.php';
                                 <h5>Tambahkan Kategori</h5>
                             </div>
                             <div class="ibox-content">
-                                <form role="form">
+                                <form role="form" method="POST" action="action/createKategori.php">
                                     <div class="row">
 
                                         <div class="col-sm-12 ">
 
-                                            <div class="form-group"><label>Nama Kategori</label> <input type="text" placeholder="Enter email" class="form-control"></div>
+                                            <div class="form-group"><label>Nama Kategori</label> <input type="text" name="nama" placeholder="Masukkan nama kategori" class="form-control"></div>
 
                                         </div>
                                     </div>
-                                    <button class="btn btn-lg btn-primary w-full m-t-n-xs" type="submit"><strong>+ Tambahkkan Kategori</strong></button>
+                                    <button class="btn btn-lg btn-primary w-full m-t-n-xs" name="save" type="submit"><strong>+ Tambahkkan Kategori</strong></button>
                                 </form>
 
                             </div>
@@ -54,16 +54,27 @@ include_once 'layouts/header.php';
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="gradeX">
-                                                <td>Trident</td>
-                                                <td>Internet
-                                                    Explorer 4.0
-                                                </td>
-                                                <td class="center">
-                                                    <button class="btn btn-primary dim btn-sm-dim" type="button"><i class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-danger dim btn-sm-dim" type="button"><i class="fa fa-trash-o"></i></button>
-                                                </td>
-                                            </tr>
+                                            <?php
+                                            $sql = "SELECT * FROM category";
+                                            $result = mysqli_query($conn, $sql);
+                                            if (mysqli_num_rows($result) > 0) {
+                                                $no = 1;
+                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                    echo "<tr class='gradeX'>";
+                                                    echo "<td>" . $no++ . "</td>";
+                                                    echo "<td>" . $row['category_name'] . "</td>";
+                                                    echo "<td class='center'>";
+                                                    echo "<button class='btn btn-primary dim btn-sm-dim' type='button'><i class='fa fa-pencil'></i></button>";
+                                                    echo "<button class='btn btn-danger dim btn-sm-dim' type='button'><i class='fa fa-trash-o'></i></button>";
+                                                    echo "</td>";
+                                                    echo "</tr>";
+                                                }
+                                            } else {
+                                                echo "<tr class='gradeX'>";
+                                                echo "<td colspan='3' class='text-center'>Tidak ada data kategori</td>";
+                                                echo "</tr>";
+                                            }
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>

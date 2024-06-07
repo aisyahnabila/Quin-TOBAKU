@@ -23,8 +23,10 @@ if (isset($_POST['submit'])) {
             exit();
         } else {
             echo "<script>alert('Password Anda salah. Silakan coba lagi!')</script>";
+            header("Location: ../login.php");
         }
     } else {
         echo "<script>alert('Username tidak ditemukan. Silakan coba lagi!')</script>";
+        header("Location: ../login.php");
     }
 }

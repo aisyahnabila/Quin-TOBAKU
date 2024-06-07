@@ -21,39 +21,45 @@ include_once 'layouts/header.php';
                                 <h5>Tambahkan Barang</h5>
                             </div>
                             <div class="ibox-content">
-                                <form role="form">
+                                <form role="form" action="action/createBarang.php" method="post" enctype="multipart/form-data">
                                     <div class="row">
-
                                         <div class="col-sm-6 ">
-
-                                            <div class="form-group"><label>Nama Barang</label> <input type="text" placeholder="Enter email" class="form-control"></div>
-                                            <div class="form-group"><label>Deskripsi</label> <textarea class="form-control"></textarea></div>
-                                            <div>
-
+                                            <div class="form-group">
+                                                <label>Nama Barang</label>
+                                                <input type="text" name="nama_barang" placeholder="Masukkan barang" class="form-control" required>
                                             </div>
-
+                                            <div class="form-group">
+                                                <label>Deskripsi</label>
+                                                <textarea name="deskripsi" class="form-control" required></textarea>
+                                            </div>
                                         </div>
                                         <div class="col-sm-6 ">
-
-                                            <div class="form-group"><label>Kategori</label>
-                                                <select class="form-control m-b" name="kategori">
-                                                    <option>option 1</option>
-                                                    <option>option 2</option>
-                                                    <option>option 3</option>
-                                                    <option>option 4</option>
+                                            <div class="form-group">
+                                                <label>Kategori</label>
+                                                <select class="form-control m-b" name="kategori" required>
+                                                    <?php
+                                                    $sql = "SELECT * FROM category";
+                                                    $result = mysqli_query($conn, $sql);
+                                                    if (mysqli_num_rows($result) > 0) {
+                                                        while ($row = mysqli_fetch_assoc($result)) {
+                                                            echo "<option value='" . $row['category_id'] . "'>" . $row['category_name'] . "</option>";
+                                                        }
+                                                    } else {
+                                                        echo "<option value=''>Tidak ada data kategori</option>";
+                                                    }
+                                                    ?>
                                                 </select>
                                             </div>
-                                            <div class="form-group"><label>Foto</label>
+                                            <div class="form-group">
+                                                <label>Foto</label>
                                                 <div class="custom-file">
-                                                    <input id="logo" type="file" class="custom-file-input">
-                                                    <label for="logo" class="custom-file-label">Choose file...</label>
+                                                    <input id="foto" name="foto" type="file" class="custom-file-input" required>
+                                                    <label for="foto" class="custom-file-label">Choose file...</label>
                                                 </div>
                                             </div>
-
                                         </div>
-
                                     </div>
-                                    <button class="btn btn-lg btn-primary w-full m-t-n-xs" type="submit"><strong>+ Tambahkkan Barang</strong></button>
+                                    <button class="btn btn-lg btn-primary w-full m-t-n-xs" name="save" type="submit"><strong>+ Tambahkkan Barang</strong></button>
                                 </form>
 
                             </div>

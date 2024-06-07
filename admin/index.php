@@ -58,18 +58,29 @@ include_once 'layouts/header.php';
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="gradeX">
-                                                <td>Trident</td>
-                                                <td>Internet
-                                                    Explorer 4.0
-                                                </td>
-                                                <td>Win 95+</td>
-                                                <td class="center">4</td>
-                                                <td class="center">
-                                                    <button class="btn btn-primary dim btn-sm-dim" type="button"><i class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-danger dim btn-sm-dim" type="button"><i class="fa fa-trash-o"></i></button>
-                                                </td>
-                                            </tr>
+                                        <?php
+                                            $sql = "SELECT item.*, category.category_name FROM item INNER JOIN category ON item.category_id = category.category_id";
+                                            $result = mysqli_query($conn, $sql);
+                                            
+                                            if (mysqli_num_rows($result) > 0) {
+                                                $no = 1;
+                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                    echo "<tr class='gradeX'>";
+                                                    echo "<td>" . $no . "</td>";
+                                                    echo "<td>" . $row['item_name'] . "</td>";
+                                                    echo "<td>" . $row['item_description'] . "</td>";
+                                                    echo "<td>" . $row['category_name'] . "</td>";
+                                                    echo "<td class='center'>
+                                                            <button class='btn btn-primary dim btn-sm-dim' type='button'><i class='fa fa-pencil'></i></button>
+                                                            <button class='btn btn-danger dim btn-sm-dim' type='button'><i class='fa fa-trash-o'></i></button>
+                                                          </td>";
+                                                    echo "</tr>";
+                                                    $no++;
+                                                }
+                                            } 
+                                            
+                                            mysqli_close($conn);
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>
