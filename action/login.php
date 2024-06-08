@@ -3,7 +3,7 @@ session_start();
 include '../config.php';
 
 if (isset($_SESSION['username'])) {
-    header("Location: berhasil_login.php");
+    header("Location: ../admin/index.php");
     exit();
 }
 

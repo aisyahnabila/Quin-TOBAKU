@@ -32,7 +32,7 @@ $data = mysqli_query($conn, "SELECT * FROM category WHERE category_id='$id'");
 
                                             <div class="col-sm-12 ">
 
-                                                <div class="form-group"><label>Nama Kategori</label> <input type="text" value="<?php echo $row['category_name']?>" name="nama" placeholder="Masukkan nama kategori" class="form-control"></div>
+                                                <div class="form-group"><label>Nama Kategori</label> <input type="text" value="<?php echo $row['category_name'] ?>" name="nama" placeholder="Masukkan nama kategori" class="form-control"></div>
 
                                             </div>
                                         </div>
@@ -48,14 +48,9 @@ $data = mysqli_query($conn, "SELECT * FROM category WHERE category_id='$id'");
                     </div>
                 </div>
             </div>
-            <div class="footer">
-                <div class="float-right">
-                    10GB of <strong>250GB</strong> Free.
-                </div>
-                <div>
-                    <strong>Copyright</strong> Example Company &copy; 2014-2018
-                </div>
-            </div>
+            <?php
+            include 'layouts/footer.php'
+            ?>
         </div>
     </div>
 

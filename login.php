@@ -1,5 +1,11 @@
 <?php
-include 'config.php'
+include 'config.php';
+session_start();  // Memulai session
+
+if (isset($_SESSION['username'])) {
+    header("Location: admin/index.php"); // Arahkan ke halaman admin jika sudah login
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html>

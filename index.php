@@ -17,7 +17,7 @@ $query = mysqli_query($conn, $sql);
       <h1 class="absolute px-10 text-2xl font-medium text-yellow-600 bg-white dark:text-white dark:bg-gray-900">
         Kategori Produk</h1>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 mt-10 p-5">
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-12 mt-10 p-5">
       <?php
       while ($data = mysqli_fetch_array($query)) {
       ?>
@@ -26,7 +26,7 @@ $query = mysqli_query($conn, $sql);
           <div class="p-4">
             <h2 class="text-lg text-center"><?php echo $data['item_name']; ?></h2>
             <div class="mt-4 text-center">
-              <a class="text-yellow-600 border-b-2 border-yellow-600" href="">Lihat Lebih Banyak</a>
+              <a class="text-yellow-600 border-b-2 border-yellow-600" href="<?php echo 'detailproduk.php?id=' .  $data['item_id'] ?>">Lihat Lebih Banyak</a>
             </div>
           </div>
         </div>
@@ -49,7 +49,7 @@ $query = mysqli_query($conn, $sql);
 <!-- Banner component End -->
 
 <?php
-    include 'layout/footer.php'
+include 'layout/footer.php'
 ?>
 <script src="src/js/index.js" defer></script>
 </body>

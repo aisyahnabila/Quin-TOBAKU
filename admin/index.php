@@ -64,6 +64,8 @@ $totalKategori = $rowKategori['total_kategori'];
                                                 <th>Nama Barang</th>
                                                 <th>Deskripsi</th>
                                                 <th>Kategori</th>
+                                                <th>Stok</th>
+                                                <th>Harga</th>
                                                 <th>Opsi</th>
                                             </tr>
                                         </thead>
@@ -80,9 +82,11 @@ $totalKategori = $rowKategori['total_kategori'];
                                                     echo "<td>" . $row['item_name'] . "</td>";
                                                     echo "<td>" . $row['item_description'] . "</td>";
                                                     echo "<td>" . $row['category_name'] . "</td>";
+                                                    echo "<td>" . $row['stock'] . "</td>";
+                                                    echo "<td>" . $row['price'] . "</td>";
                                                     echo "<td class='center'>
                                                             <a href='edit_data_item.php?id=" .  $row['item_id'] . " ' class='btn btn-primary dim btn-sm-dim' type='button'><i class='fa fa-pencil'></i></a>
-                                                            <a href='action/deleteBarang.php?id=". $row['item_id'] . " ' class='btn btn-danger dim btn-sm-dim text-white  ' type='button'><i class='fa fa-trash-o'></i></a>
+                                                            <a href='action/deleteBarang.php?id=" . $row['item_id'] . " ' class='btn btn-danger dim btn-sm-dim text-white  ' type='button'><i class='fa fa-trash-o'></i></a>
                                                           </td>";
                                                     echo "</tr>";
                                                     $no++;
@@ -100,14 +104,9 @@ $totalKategori = $rowKategori['total_kategori'];
                     </div>
                 </div>
             </div>
-            <div class="footer">
-                <div class="float-right">
-                    10GB of <strong>250GB</strong> Free.
-                </div>
-                <div>
-                    <strong>Copyright</strong> Example Company &copy; 2014-2018
-                </div>
-            </div>
+            <?php
+            include 'layouts/footer.php'
+            ?>
         </div>
     </div>
 

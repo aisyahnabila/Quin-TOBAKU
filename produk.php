@@ -36,7 +36,7 @@ $queryitem = mysqli_query($conn, $item);
                     <div class="p-4">
                         <h2 class="text-lg text-center"><?php echo $data['item_name']; ?></h2>
                         <div class="mt-4 text-center">
-                            <a class="text-yellow-600 border-b-2 border-yellow-600" href="">Lihat Lebih Banyak</a>
+                            <a class="text-yellow-600 border-b-2 border-yellow-600" href="<?php echo 'detailproduk.php?id=' .  $data['item_id'] ?>">Lihat Lebih Banyak</a>
                         </div>
                     </div>
                 </div>

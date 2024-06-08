@@ -24,17 +24,22 @@ include_once 'layouts/header.php';
 
                                 <form role="form" action="action/createBarang.php" method="post" enctype="multipart/form-data">
                                     <div class="row">
-                                        <div class="col-sm-6 ">
+                                        <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Nama Barang</label>
                                                 <input type="text" name="nama_barang" placeholder="Masukkan barang" class="form-control" required>
                                             </div>
                                             <div class="form-group">
+                                                <label>Komposisi</label>
+                                                <input type="text" name="komposisi" class="form-control" required placeholder="Contoh : Mentega,Buah,Sayur">
+                                            </div>
+                                            <div class="form-group">
                                                 <label>Deskripsi</label>
                                                 <textarea name="deskripsi" class="form-control" required></textarea>
                                             </div>
+
                                         </div>
-                                        <div class="col-sm-6 ">
+                                        <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Kategori</label>
                                                 <select class="form-control m-b" name="kategori" required>
@@ -58,23 +63,27 @@ include_once 'layouts/header.php';
                                                     <label for="foto" class="custom-file-label">Choose file...</label>
                                                 </div>
                                             </div>
+                                            <div class="form-group">
+                                                <label>Stok</label>
+                                                <input type="number" name="stok" placeholder="Masukkan stok" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Harga</label>
+                                                <input type="number" name="harga" placeholder="Masukkan harga" class="form-control" required>
+                                            </div>
                                         </div>
                                     </div>
-                                    <button class="btn btn-lg btn-primary w-full m-t-n-xs" name="save" type="submit"><strong>+ Tambahkkan Barang</strong></button>
+                                    <button class="btn btn-lg btn-primary w-full m-t-n-xs" name="save" type="submit"><strong>+ Tambah Barang</strong></button>
                                 </form>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="footer">
-                <div class="float-right">
-                    10GB of <strong>250GB</strong> Free.
-                </div>
-                <div>
-                    <strong>Copyright</strong> Example Company &copy; 2014-2018
-                </div>
-            </div>
+            <?php
+            include 'layouts/footer.php'
+            ?>
         </div>
     </div>
 
