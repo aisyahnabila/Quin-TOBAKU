@@ -3,7 +3,7 @@ include 'layout/head.php';
 $id = $_GET['id'];
 $data = mysqli_query($conn, "select * from item where item_id='$id'");
 while ($row = mysqli_fetch_array($data)) {
-?>
+    ?>
     <section class="mb-32">
         <div class="container mx-auto px-4 my-8">
             <div class="relative flex items-center justify-center w-full">
@@ -13,14 +13,14 @@ while ($row = mysqli_fetch_array($data)) {
             </div>
             <div class="grid md:grid-cols-2 sm:grid-cols-1 gap-4 mt-10">
                 <div>
-                    <img src="uploads/<?php echo $row['image']?>" class="w-full h-30 object-cover">
+                    <img src="uploads/<?php echo $row['image'] ?>" class="w-full h-30 object-cover">
                 </div>
                 <div class="relative">
                     <div>
                         <p class="text-xl font-bold">
                             <?php
                             echo $row['item_name']
-                            ?>
+                                ?>
                         </p>
                     </div>
                     <div class="grid grid-cols-4 gap-4">
@@ -31,7 +31,7 @@ while ($row = mysqli_fetch_array($data)) {
                     <div class="mt-3">
                         <p class="text-2xl font-bold">
                             Rp <?php
-                                echo $row['price']
+                            echo $row['price']
                                 ?>,-
                         </p>
                     </div>
@@ -42,7 +42,7 @@ while ($row = mysqli_fetch_array($data)) {
                         <p>
                             <?php
                             echo $row['item_description']
-                            ?>
+                                ?>
                         </p>
                     </div>
                     <div class="mt-3">
@@ -52,24 +52,27 @@ while ($row = mysqli_fetch_array($data)) {
                         <p class="">
                             <?php
                             echo $row['composition']
-                            ?>
+                                ?>
                         </p>
                     </div>
                     <div class="md:absolute bottom-0 w-full sm:w-full">
-                        <a href="https://wa.me/62895425730090?text=Halo%20admin%20QUIN%20TOBAKU,%20saya%20ingin%20membeli%20produk%20<?php echo urlencode($row['item_name']); ?>%20dengan%20harga%20produk%20<?php echo urlencode($row['price']); ?>" type="button" class="mt-10 w-full rounded-2xl text-white bg-yellow-500 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">Pesan Produk</a>
+                        <a href="https://wa.me/628563215844?text=Halo%20admin%20QUIN%20TOBAKU,%20saya%20ingin%20membeli%20produk%20<?php echo urlencode($row['item_name']); ?>%20dengan%20harga%20produk%20<?php echo urlencode($row['price']); ?>"
+                            type="button"
+                            class="mt-10 w-full rounded-2xl text-white bg-yellow-500 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">Pesan
+                            Produk</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-<?php
+    <?php
 }
 include 'layout/footer.php';
 ?>
 <script src="src/js/index.js" defer></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         const categoryButtons = document.querySelectorAll(".category-button");
         const itemCards = document.querySelectorAll(".item-card");
 
