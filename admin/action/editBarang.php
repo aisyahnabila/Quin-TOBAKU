@@ -6,6 +6,7 @@ if (isset($_POST['save'])) {
     $nama_barang = $_POST['nama_barang'];
     $deskripsi = $_POST['deskripsi'];
     $kategori = $_POST['kategori'];
+    $stok = $_POST['stok']; // Tangkap input stok
     $foto_name = '';
 
     // Check if a new photo is uploaded
@@ -31,10 +32,10 @@ if (isset($_POST['save'])) {
     // Update item in database
     if (!empty($foto_name)) {
         // Update with new image
-        $sql = "UPDATE item SET item_name='$nama_barang', item_description='$deskripsi', category_id='$kategori', image='$foto_name' WHERE item_id='$itemId'";
+        $sql = "UPDATE item SET item_name='$nama_barang', item_description='$deskripsi', category_id='$kategori', stock='$stok', image='$foto_name' WHERE item_id='$itemId'";
     } else {
         // Update without changing image
-        $sql = "UPDATE item SET item_name='$nama_barang', item_description='$deskripsi', category_id='$kategori' WHERE item_id='$itemId'";
+        $sql = "UPDATE item SET item_name='$nama_barang', item_description='$deskripsi', category_id='$kategori', stock='$stok' WHERE item_id='$itemId'";
     }
 
     if (mysqli_query($conn, $sql)) {
@@ -46,4 +47,4 @@ if (isset($_POST['save'])) {
     echo "Incomplete form data.";
 }
 
-mysqli_close($conn);
+mysqli_close($conn);   
