@@ -105,7 +105,7 @@ include 'layout/head.php'
                 <img src="images//gambar2.png" alt="">
                 <img src="images//gambar3.png" alt="">
                 <img src="images//gambar4.png" alt="">
-                <img src="images//gambar5.png" alt="">
+                <img src="images//produk5.png" alt="">
                 <img src="images//gambar6.png" alt="">
             </div>
         </div>

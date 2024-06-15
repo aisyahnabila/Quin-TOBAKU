@@ -26,9 +26,9 @@ $query = mysqli_query($conn, $sql);
       <!-- card 1 -->
       <div class="flex flex-col gap-4 bg-white p-4 border-2 shadow-md rounded-md">
         <div class="flex flex-col gap-2">
-          <div class="flex items-center">
+          <div class="flex items-center justify-between">
             <span class="font-bold text-lg">Carla Supriani</span>
-            <div class="flex items-center ml-2 text-yellow-500">
+            <div class="flex items-center text-yellow-500">
               <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                 viewBox="0 0 22 20">
                 <path
@@ -60,13 +60,14 @@ $query = mysqli_query($conn, $sql);
             Bos baik hati, pelayanan superrrr ramah</p>
         </div>
       </div>
+
       <!-- card 1 End -->
       <!-- card 2 -->
       <div class="flex flex-col gap-4 bg-white p-4 border-2 shadow-md rounded-md">
         <div class="flex flex-col gap-2">
-          <div class="flex items-center">
+          <div class="flex items-center justify-between">
             <span class="font-bold text-lg">Neni Koesumawati</span>
-            <div class="flex items-center ml-2 text-yellow-500">
+            <div class="flex items-center text-yellow-500">
               <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                 viewBox="0 0 22 20">
                 <path
@@ -102,9 +103,9 @@ $query = mysqli_query($conn, $sql);
       <!-- card 3 -->
       <div class="flex flex-col gap-4 bg-white p-4 border-2 shadow-md rounded-md">
         <div class="flex flex-col gap-2">
-          <div class="flex items-center">
+          <div class="flex items-center justify-between">
             <span class="font-bold text-lg">Diatmoko hp</span>
-            <div class="flex items-center ml-2 text-yellow-500">
+            <div class="flex items-center text-yellow-500">
               <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                 viewBox="0 0 22 20">
                 <path
@@ -136,14 +137,13 @@ $query = mysqli_query($conn, $sql);
             yg lama, ruangan toko besar & ber AC jd nyaman belanjanya, petugasnya ramah</p>
         </div>
       </div>
-
       <!-- card 3 End -->
       <!-- card 4  -->
       <div class="flex flex-col gap-4 bg-white p-4 border-2 shadow-md rounded-md">
         <div class="flex flex-col gap-2">
-          <div class="flex items-center">
+          <div class="flex items-center justify-between">
             <span class="font-bold text-lg">Latif Tjais</span>
-            <div class="flex items-center ml-2 text-yellow-500">
+            <div class="flex items-center text-yellow-500">
               <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                 viewBox="0 0 22 20">
                 <path
@@ -180,7 +180,7 @@ $query = mysqli_query($conn, $sql);
       <div class="flex flex-col gap-4 bg-white p-4 border-2 shadow-md rounded-md">
         <div class="flex flex-col gap-2">
           <div class="flex items-center justify-between">
-            <span class="font-bold text-lg">Carla Supriani</span>
+            <span class="font-bold text-lg">M. Junianto Tri Gunawan</span>
             <div class="flex items-center text-yellow-500">
               <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                 viewBox="0 0 22 20">
@@ -209,18 +209,18 @@ $query = mysqli_query($conn, $sql);
               </svg>
             </div>
           </div>
-          <p class="text-gray-900 dark:text-white">Selalu nyaman belanja di toko ini, lengkap owner nya pak bos dan Bu
-            Bos baik hati, pelayanan superrrr ramah</p>
+          <p class="text-gray-900 dark:text-white">Cukup lengkap.
+            Menyediakan bahan bahan kue dan perlengkapannya.</p>
         </div>
       </div>
-
       <!-- card 5 End -->
+
       <!-- card 6 -->
       <div class="flex flex-col gap-4 bg-white p-4 border-2 shadow-md rounded-md">
         <div class="flex flex-col gap-2">
-          <div class="flex items-center">
+          <div class="flex items-center justify-between">
             <span class="font-bold text-lg">Ardhian Octavianus</span>
-            <div class="flex items-center ml-2 text-yellow-500">
+            <div class="flex items-center text-yellow-500">
               <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                 viewBox="0 0 22 20">
                 <path
@@ -251,6 +251,7 @@ $query = mysqli_query($conn, $sql);
           <p class="text-gray-900 dark:text-white">Saya di lombok suka belanja di sini..warung amanah</p>
         </div>
       </div>
+      <!-- card 6 End -->
 
       </figcaption>
       </figure>
@@ -260,7 +261,7 @@ $query = mysqli_query($conn, $sql);
     <div class="relative flex items-center justify-center w-full mt-14">
       <hr class="w-full h-px bg-yellow-600 border-0 dark:bg-gray-700">
       <h1 class="absolute px-10 text-2xl font-medium text-yellow-600 bg-white dark:text-white dark:bg-gray-900">
-        Kategori Produk</h1>
+        Produk Kami</h1>
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-12 mt-10 p-5">
       <?php
